@@ -93,7 +93,7 @@ int main(int argc, char **argv) {
     
     cufftExecR2C(plan, d_gray, d_freq);
 
-    int threads = 256;
+    int threads = 1024;
     int blocks = (width / 2 + 1 + threads - 1) / threads;
     for (int y = 0; y < height; y++) {
         applyCepstralSmoothing<<<blocks, threads>>>(d_freq + y * (width / 2 + 1), width, mk);
