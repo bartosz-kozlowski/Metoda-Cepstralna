@@ -16,6 +16,8 @@ elif [[ "$BASENAME" == *"openmp"* ]]; then
     TYPE="omp"
 elif [[ "$BASENAME" == *"cuda"* ]]; then
     TYPE="cuda"
+elif [[ "$BASENAME" == *"cufft"* ]]; then
+    TYPE="cufft"
 else
     TYPE="unknown"
 fi
